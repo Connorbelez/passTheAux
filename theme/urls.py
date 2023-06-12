@@ -17,12 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from .views import index
-from .views import my_view, my_view2
+
+from .views import findex
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('theme.urls')),
-    path('index', my_view2, name='mypage'),
-    path("__reload__/", include("django_browser_reload.urls")),
-    path('api/', include('api.urls')),
+    path('',findex, name='mypage'),
 ]
