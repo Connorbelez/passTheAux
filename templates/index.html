@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+
+<head>
+    <title class="title">INDEX!!!</title>
+  <link rel="stylesheet" href="{% static "css/dist/styles.css" %}">
+</head>
+<body class="bg-gray-500">
+    <h1 class="title bg-danger">{{ heading }}</h1>
+    <ul>
+        {% for item in items %}
+        <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+    {% if user.is_authenticated %}
+        <p>Welcome, {{ user.username }}!</p>
+    {% else %}
+        <p>Please log in to view the content.</p>
+    {% endif %}
+</body>
+</html>
